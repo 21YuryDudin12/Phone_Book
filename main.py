@@ -57,9 +57,6 @@ def delete_contact(book: dict, cid: int):
     return name[0]
 
 
-
-    
-
 def menu():
     menu_points = ['Open file', 
                    'Save file',
@@ -68,7 +65,8 @@ def menu():
                    'Find contact',
                    'Change contact',
                    'Delete contact',
-                   'Exit']
+                   'Exit',
+                   'Save and exit']
     print('Main menu')
     [print(f'\t{i}.{item}') for i, item in enumerate(menu_points, 1)]
     choice = int(input('Take the point of menu: '))
@@ -106,4 +104,7 @@ while True:
         case 8:
             print('\nGoodbye!')
             break
-
+        case 9:
+            save_file(phone_book)
+            print('\nChanges are saved. Goodbye!')
+            break
